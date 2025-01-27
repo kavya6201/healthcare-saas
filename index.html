@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare SaaS Platform</title>
+    <style>
+        /* Ensure the body takes up the full screen */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 200vh; /* Full screen height */
+            width: 100vw;  /* Full screen width */
+            margin: 0;
+            text-align: center;
+            background-color: #c5a5db; /* Violet background */
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem; /* Slightly reduced font size */
+            font-weight: bold; 
+            color: #fff; /* White text for better contrast */
+        }
+        p {
+            font-size: 1.2rem; /* Slightly reduced font size */
+            color: #fff; /* White text for better contrast */
+            margin-bottom: 15px;
+        }
+        .measurements {
+            font-size: 1.2rem;
+            margin-bottom: 20px; /* Space between measurements and canvas */
+            color: #000; /* Black color for measurements */
+        }
+        #canvas {
+            border: 1px solid black;
+            margin-top: 20px;
+            display: block;
+        }
+        button {
+            padding: 12px 25px; /* Slightly reduced padding for smaller buttons */
+            color: #fff; /* White button text */
+            border: none;
+            cursor: pointer;
+            font-size: 1rem; /* Slightly reduced font size */
+            margin-bottom: 12px;
+            border-radius: 5px;
+            width: 200px; /* Reduced button width */
+        }
+        #choose-option-btn {
+            background-color: #ff5722; /* Orange color for 'Choose Option' button */
+        }
+        #choose-option-btn:hover {
+            background-color: #e64a19; /* Darker orange on hover */
+        }
+        #rect-btn {
+            background-color: #f39c12; /* Yellow color for rectangle button */
+        }
+        #rect-btn:hover {
+            background-color: #e67e22; /* Darker yellow on hover */
+        }
+        #circle-btn {
+            background-color: #3498db; /* Blue color for circle button */
+        }
+        #circle-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+        #save-btn {
+            background-color: #007bff; /* Blue color for save button */
+        }
+        #save-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="file"] {
+            margin-top: 15px;
+            font-size: 1rem; /* Slightly reduced font size for input */
+        }
+    </style>
+</head>
+<body>
+    <h1>Healthcare SaaS Platform</h1>
+    <p>Start annotating medical images, measuring regions of interest, and more!</p>
+
+    <div class="measurements" id="measurements-display"></div> <!-- Measurements moved above canvas -->
+
+    <div class="button-container">
+        <button id="choose-option-btn">Choose Option</button>
+        <button id="rect-btn">Draw Rectangle</button> <!-- Changed color to yellow -->
+        <button id="circle-btn">Draw Circle</button> <!-- Changed color to blue -->
+        <button id="save-btn">Save as PNG</button>
+    </div>
+
+    <input type="file" id="upload-image" accept="image/*">
+    <canvas id="canvas" width="600" height="400"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
